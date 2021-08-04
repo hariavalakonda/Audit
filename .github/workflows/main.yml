@@ -44,11 +44,11 @@ jobs:
           name: NodeAudit
           path: node-audit-results.json
         if: always()
+        continue-on-error: true
 
   deployment:
     runs-on: ubuntu-latest
     needs: security-testing
-    continue-on-error: true
     steps: 
       - name: Deployment Steps
         run: |
